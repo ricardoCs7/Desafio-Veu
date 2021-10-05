@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+}
+
+#formulario {
+  border-radius: 15px;
+  padding: 15px 40px 15px 40px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border: lightskyblue solid 3px;
+  border-style: dashed;
+}
+
+#formulario #button {
+  text-align: center;
+}
+
+#formulario h5 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#separador {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  border-top: solid grey 1px;
+}
+/*# sourceMappingURL=style.css.map */
