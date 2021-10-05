@@ -69,25 +69,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="producto in productos">
+          <tr v-for="(producto,index) in productos">
             <td> {{producto.nombre}}</td>
             <td>{{producto.descripcion}}</td>
             <td>{{producto.precio}}</td>
-
             <td><button type="button" class="btn btn-warning">Editar</button></td>
-            <td><button @click="deleteProducto" type="button" class="btn btn-danger">Eliminar</button></td>
+            <td><button @click="deleteProducto(index)" type="button" class="btn btn-danger">Eliminar</button></td>
           </tr>
         </tbody>
       </table>
 
     </div>
 
-    <!-- <div v-for="producto in productos">
+    <div v-for="(producto,index) in productos">
       {{producto}}
     </div>
     <pre>
       {{$data}}
-    </pre> -->
+    </pre>
 
   </div>
 
