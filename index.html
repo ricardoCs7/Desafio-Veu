@@ -73,15 +73,15 @@
           <tr v-for="(producto, index) in productos">
 
            
-            <td v-if="editIndex===index"><input v-model="editProducto" type="text"></td> 
+            <td v-if="editIndex===index"><input v-model="editProducto.editNombre" type="text"></td> 
             <td v-else> {{producto.nombre}}</td>
 
             
-            <td v-if="editIndex===index"> <input v-model="editProducto" type="text"></td>
+            <td v-if="editIndex===index"> <input v-model="editProducto.editDes" type="text"></td>
             <td v-else>{{producto.descripcion}}</td>
 
            
-            <td v-if="editIndex===index"> <input  v-model="editProducto" type="number"></td>
+            <td v-if="editIndex===index"> <input  v-model="editProducto.editPrecio" type="number"></td>
             <span v-if="error" class="text-danger">Precio mayor a 0</span>
             <td v-else>{{producto.precio}}</td>
 

@@ -10,7 +10,7 @@ class Producto {
 const app = Vue.createApp({
   data() {
     return {
-      editProducto: { editNombre :'', editDes:'' } ,
+      editProducto: { editNombre :'', editDes:'', editPrecio:'' } ,
       newProducto: new Producto(),
       productos: [new Producto({ nombre: 'Arya', descripcion: 'Gata Calico', precio: 100000 })],
       error: false,
@@ -33,14 +33,16 @@ const app = Vue.createApp({
     },
     setProducto(index) {
       this.editIndex = index;
-      this.editProducto = this.productos[index].nombre;
-      this.editProducto = this.productos[index].descripcion;
-      this.editProducto = this.productos[index].precio;
+      this.editProducto.editNombre = this.productos[index].nombre;
+      this.editProducto.editDes = this.productos[index].descripcion;
+      this.editProducto.editPrecio = this.productos[index].precio;
 
       console.log(this.productos[index].nombre, this.productos[index].descripcion, this.productos[index].precio);
     },
     saveProducto(index) {
-      this.productos[index].nombre = this.editProducto;
+      this.productos[index].nombre = this.editProducto.editNombre;
+      this.productos[index].descripcion = this.editProducto.editDes;
+      this.productos[index].precio = this.editProducto.editPrecio;
       
      
       this.editIndex = -1;
