@@ -27,4 +27,8 @@ h1 {
   margin-bottom: 15px;
   border-top: solid grey 1px;
 }
+
+.table .form-control {
+  width: 80%;
+}
 /*# sourceMappingURL=style.css.map */

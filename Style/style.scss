@@ -18,10 +18,17 @@ h1 {
         text-align: center;
         margin-bottom: 15px;
     }
+    
 }
 
 #separador {
     margin-top: 50px;
     margin-bottom: 15px;
     border-top: solid grey 1px;
+}
+
+.table{
+    .form-control{
+        width: 80%;
+    }
 }
