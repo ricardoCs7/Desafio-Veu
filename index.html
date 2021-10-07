@@ -64,17 +64,33 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Precio</th>
-            <th>Editar Producto</th>
-            <th>Eliminar Producto</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(producto,index) in productos">
-            <td> {{producto.nombre}}</td>
-            <td>{{producto.descripcion}}</td>
-            <td>{{producto.precio}}</td>
-            <td><button type="button" class="btn btn-warning">Editar</button></td>
-            <td><button @click="deleteProducto(index)" type="button" class="btn btn-danger">Eliminar</button></td>
+
+          <tr v-for="(producto, index) in productos">
+
+           
+            <td v-if="editIndex===index"><input v-model="editProducto" type="text"></td> 
+            <td v-else> {{producto.nombre}}</td>
+
+            
+            <td v-if="editIndex===index"> <input v-model="editProducto" type="text"></td>
+            <td v-else>{{producto.descripcion}}</td>
+
+           
+            <td v-if="editIndex===index"> <input  v-model="editProducto" type="number"></td>
+            <span v-if="error" class="text-danger">Precio mayor a 0</span>
+            <td v-else>{{producto.precio}}</td>
+
+            <td v-if="editIndex===index"><button @click="saveProducto(index)" type="button" class="btn btn-success">Guardar</button></td>
+            <td v-else><button @click="setProducto(index)" type="button" class="btn btn-warning">Editar</button></td>
+            
+            <td v-if="editIndex===index"><button @click="cancelar" type="button" class="btn btn-secondary">Cancelar</button></td>
+            <td v-else><button @click="deleteProducto(index)" type="button" class="btn btn-danger">Eliminar</button></td>
+            
           </tr>
         </tbody>
       </table>
